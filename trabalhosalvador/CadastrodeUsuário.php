@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,35 +11,27 @@
     <link rel="stylesheet" href="cadastroLogin.css">
     <link rel="shortcut icon" href="/img/logo.jpeg" type="image/x-icon">
     <title>CadasPro</title>
-    <style>
-     
-     
-    </style>
 </head>
 <body>
-<div class="container">
-    <div class="logo-container text-left">
-        <img src="fundo.jpeg"  alt="Logo" width="300px">
-    </div>
+    
+    <div><img src="/img/logo.jpeg" alt="" width="300px"></div>   
 
-    <div class="form-container">
-        <form method="GET" action="resultadopesquisa.php">
-            <h1>Pesquisa de Produto</h1>
+    <form id="cadastroForm" action="cadastrousuario.php" method="post">
 
-            <div class="mb-3">
-                <label for="produto" class="form-label"><strong>Nome do Produto:</strong></label>
-                <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o nome do produto" required>
-            </div>
-
-            <div class="text-center">
-                <input type="submit" id="butao" class="btn btn-primary" value="Pesquisar">
-            </div>
-
-            <p class="text-center mt-3"><a href="gerenciamento.php">Voltar</a></p>
-        </form>
-    </div>
-</div>
-<script>
+        <h1>Área de Cadastro</h1>
+    
+        <label for="nome"><strong>Login:</strong> </label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Crie seu nome de login" required><br>
+    
+        <label for="senha"><strong>Senha:</strong> </label>
+        <input type="password" class="form-control" id="senha" name="senha" placeholder="Crie sua senha de acesso" required><br>
+    
+        <input type="submit" id="butao" value="Cadastrar">
+    
+        <p> <strong>Já possui uma conta?</strong> <a href="index.php">Faça login</a></p>
+        
+    </form>
+    <script>
     // Função para destruir a sessão quando a página é fechada
     $(window).on('beforeunload', function() {
         $.ajax({
@@ -52,5 +47,7 @@
         });
     });
 </script>
+
+    
 </body>
 </html>

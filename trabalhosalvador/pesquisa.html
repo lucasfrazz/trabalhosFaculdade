@@ -11,21 +11,39 @@
     <title>CadasPro</title>
 </head>
 <body>
-    
+    <div class="container">
+        
+        <div class="text-center my-4">
+        <img src="fundo.jpeg" alt="Logo" width="300px">
+    </div>
    
     <form method="GET" action="pesquisa.php">
 
         <h1>Pesquisa de Produto</h1>
-
+    
         <label for=""><strong>Nome do Produto:</strong> </label>
-        <input type="text" class="form-control" id="produto" placeholder="Digite o nome do produto " required><br>
-
+        <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o nome do produto" required><br>
+    
         <input type="submit" id="butao" value="Pesquisar">
-
+    
         <p><a href="javascript:history.go(-1)">voltar</a></p>
-        
     </form>
 
-    
+    <script>
+        // Função para destruir a sessão quando a página é fechada
+        $(window).on('beforeunload', function() {
+            $.ajax({
+                url: 'logout.php',
+                type: 'POST',
+                async: false,
+                success: function(response) {
+                    console.log('Sessão destruída');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro ao destruir a sessão:', error);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

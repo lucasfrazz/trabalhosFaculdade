@@ -1,8 +1,10 @@
 body{
     background-color: black;
+    
 }
 
 h1{
+    
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -53,7 +55,7 @@ button:hover{
     transition-duration: 0.4s;
     color: rgb(0, 0, 0);
 }
-        /* Estilo para o botão de logout */
+        
         .logout-button {
             background-color: #ff8800;
             border: none;
@@ -63,13 +65,13 @@ button:hover{
             right: 10px;
             width: 70px;
         }
-        /* Estilo para a imagem do botão de logout */
+      
         .logout-button img {
             width: 20px;
             height: 20px;
             filter: invert(100%);
         }
-      /* Estilo para o canto superior direito */
+      
       .corner {
         margin-left: 80%;
         top: 10px;
@@ -77,5 +79,6 @@ button:hover{
     }
 
     .corner button {
-        margin-left: 10px; /* Adiciona um espaço entre o texto e o botão */
+        margin-left: 10px; 
     }
+    

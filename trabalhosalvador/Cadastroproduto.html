@@ -4,6 +4,7 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,11 @@
 </head>
 
 <body>
-
+    <div class="container">
+        
+        <div class="text-center my-4">
+        <img src="fundo.jpeg" alt="Logo" width="300px">
+  
     
 
     <form id="cadastroForm" action="cadastro.php" method="post">
@@ -34,7 +39,7 @@
         <input type="date" class="form-control" name="data_validade" placeholder="Validade do Produto" required><br>
 
         <label for=""><strong>Valor de Compra:</strong></label>
-        <input type="number" class="form-control" name="Preço de compra" placeholder="valor de compra" required><br>
+        <input type="number" class="form-control" name="preco_produto" placeholder="valor de compra" required><br>
 
         <label for=""><strong>Valor de Venda:</strong></label>
         <input type="number" class="form-control" name="valor_venda" placeholder="R$ valor  de Venda" required><br>
@@ -48,7 +53,7 @@
         <input type="submit" id="butao" value="Salvar Produto">
 
         <p><a href="javascript:history.go(-1)">voltar</a></p>
-
+    </div>
     </form>
 
 </body>

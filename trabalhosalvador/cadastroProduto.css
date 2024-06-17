@@ -29,7 +29,7 @@ strong{
 #butao{
     margin-bottom: 20px;
     width: 100%;
-    background-color:#ff8800;
+    background-color:#424242;
     color: rgb(255, 255, 255);
     font-size: 20px;
     padding: px;
@@ -38,7 +38,7 @@ strong{
 }
 
 #butao:hover{
-    background-color: #114393;
+    background-color:  #ff8800;
     transition-duration: 0.4s;
     color: white;
 }
