@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <div class="container">
         
         <div class="text-center my-4">
-        <img src="fundo.jpeg" alt="Logo" width="300px">
+        <img src="logo.jpeg" alt="Logo" width="300px">
     </div>
 <h1>Lista de Produtos</h1>
 
@@ -64,17 +64,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     echo "<p><strong>Tipo:</strong> " . htmlspecialchars($row['tipo']) . "</p>";
                     echo "<p><strong>Código:</strong> " . htmlspecialchars($row['codigo']) . "</p>";
                     echo "<p><strong>Data de Validade:</strong> " . htmlspecialchars($row['data_validade']) . "</p>";
-                    echo "<p><strong>Valor de Compra:</strong> R$ " . htmlspecialchars($row['preco_produto']) . "</p>";
-                    echo "<p><strong>Valor de Venda:</strong> R$ " . htmlspecialchars($row['valor_venda']) . "</p>";
+                    echo "<p><strong>Valor de Compra:</strong> R$ " . number_format($row['preco_produto'], 2, ',', '.') . "</p>";
+                    echo "<p><strong>Valor de Venda:</strong> R$ " . number_format($row['valor_venda'], 2, ',', '.') . "</p>";                    
                     echo "<p><strong>Quantidade em Estoque:</strong> " . htmlspecialchars($row['quantidade_estoque']) . "</p>";
                     echo "<p><strong>Descrição:</strong> " . htmlspecialchars($row['descricao']) . "</p>";
                     echo "<a class='btn-editar' href='editarproduto.php?id=" . htmlspecialchars($row['id']) . "'>Editar</a>";
-                    echo "<div class='form-check form-switch'>";
-                    echo "<input class='form-check-input' type='checkbox' name='produtos[]' value='" . htmlspecialchars($row['id']) . "' id='flexSwitchCheck" . htmlspecialchars($row['id']) . "'>";
-                    echo "<label class='form-check-label' for='flexSwitchCheck" . htmlspecialchars($row['id']) . "'></label>";
-                    echo "</div>";
-                    echo "</div>";
+                    echo "<div class='form-check'>";
+                    echo "<input class='form-check-input' type='checkbox' name='produtos[]' value='" . htmlspecialchars($row['id']) . "' id='flexCheckDefault" . htmlspecialchars($row['id']) . "'>";
+                    echo "<label class='form-check-label' for='flexCheckDefault" . htmlspecialchars($row['id']) . "'>";"</label>";
                     
+                    echo "</div>";
+                    echo "</div>";
+
+
                     
                     
                 }

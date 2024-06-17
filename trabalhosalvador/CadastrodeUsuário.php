@@ -14,7 +14,11 @@
 </head>
 <body>
     
-    <div><img src="/img/logo.jpeg" alt="" width="300px"></div>   
+<div class="container">
+        
+        <div class="text-center my-4">
+        <img src="logo.jpeg" alt="Logo" width="300px">
+    </div>
 
     <form id="cadastroForm" action="cadastrousuario.php" method="post">
 

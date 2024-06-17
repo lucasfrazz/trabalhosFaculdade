@@ -52,12 +52,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         // Verificar se o produto foi encontrado
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-    ?>  
-           <div class="container">
+    ?>
+    <div class="container">
         
-        <div class="text-center my-4">
-        <img src="fundo.jpeg" alt="Logo" width="300px">
-    </div>
+    <div class="text-center my-4">
+    <img src="logo.jpeg" alt="Logo" width="300px">
+</div>
     <form action="atualizar_produto.php" method="POST">
 
         <h1>Editar Produto</h1>
@@ -76,11 +76,12 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <label for="data_validade"><strong>Data de Validade:</strong></label>
         <input type="date" class="form-control" id="data_validade" name="data_validade" value="<?php echo $row['data_validade']; ?>" required><br>
 
-        <label for="preco_produto"><strong>Valor de Compra:</strong></label>
-        <input type="text" class="form-control" id="preco_produto" name="preco_produto" value="<?php echo $row['preco_produto']; ?>" required><br>
+        <label for="preco_produto"><strong>Valor de Compra (R$):</strong></label>
+        <input type="text" class="form-control" id="preco_produto" name="preco_produto" value="<?php echo number_format($row['preco_produto'], 2, ',', '.'); ?>" required><br>
 
-        <label for="valor_venda"><strong>Valor de Venda:</strong></label>
-        <input type="text" class="form-control" id="valor_venda" name="valor_venda" value="<?php echo $row['valor_venda']; ?>" required><br>
+        <label for="valor_venda"><strong>Valor de Venda (R$):</strong></label>
+        <input type="text" class="form-control" id="valor_venda" name="valor_venda" value="<?php echo number_format($row['valor_venda'], 2, ',', '.'); ?>" required><br>
+
 
         <label for="quantidade_estoque"><strong>Quantidade em Estoque:</strong></label>
         <input type="text" class="form-control" id="quantidade_estoque" name="quantidade_estoque" value="<?php echo $row['quantidade_estoque']; ?>" required><br>

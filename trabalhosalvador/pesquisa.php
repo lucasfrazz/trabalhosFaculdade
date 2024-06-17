@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,8 +17,9 @@
 </head>
 <body>
 <div class="container">
-    <div class="logo-container text-left">
-        <img src="fundo.jpeg"  alt="Logo" width="300px">
+        
+        <div class="text-left my-4">
+        <img src="logo.jpeg" alt="Logo" width="300px">
     </div>
 
     <div class="form-container">

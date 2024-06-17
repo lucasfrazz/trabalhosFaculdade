@@ -73,13 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
         
         <div class="text-center my-4">
-        <img src="fundo.jpeg" alt="Logo" width="300px">
+        <img src="logo.jpeg" alt="Logo" width="300px">
     </div>
     
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
     <h1>Área de acesso</h1>
     <?php if(isset($error)) echo '<p style="color: red;">'.$error.'</p>'; ?>
-    
+    <input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $id_usuario; ?>">
+
     <label for=""><strong>Email:</strong></label>
     <input type="email" class="form-control" name="email" placeholder="Digite seu Email" required><br>
 

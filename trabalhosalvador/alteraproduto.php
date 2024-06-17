@@ -24,7 +24,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <div class="container">
         
         <div class="text-center my-4">
-        <img src="fundo.jpeg" alt="Logo" width="300px">
+        <img src="logo.jpeg" alt="Logo" width="300px">
     </div>
 
         <form action="resultadoeditar.php" method="GET">

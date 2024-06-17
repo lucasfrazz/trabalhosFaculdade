@@ -16,28 +16,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipo = $_POST['tipo'];
     $codigo = $_POST['Codigo'];
     $data_validade = $_POST['data_validade'];
-    $preco_produto = $_POST['preco_produto'];
-    $quantidade_estoque = $_POST['Quantidade_de_Estoque'];
-    $descricao = $_POST['Descrição'];
-    $valor_venda = $_POST['valor_venda'];
+    
+    // Tratar os valores com vírgula nos campos de preço
+    $preco_produto = str_replace(',', '.', $_POST['preco_produto']);
+    $valor_venda = str_replace(',', '.', $_POST['valor_venda']);
+    
+    $quantidade_estoque = $_POST['quantidade']; // Corrigi o nome do campo aqui
+    $descricao = $_POST['descricao'];
 
-
-
-        $servername = "viaduct.proxy.rlwy.net"; 
-        $username = "root";
-        $password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
-        $dbname = "railway";
-        $port = "56902"; 
-        
-        // Cria a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname, $port);
-        
-        // Verifica a conexão
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        echo "";
-        
+    $servername = "viaduct.proxy.rlwy.net"; 
+    $username = "root";
+    $password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
+    $dbname = "railway";
+    $port = "56902"; 
+    
+    // Cria a conexão
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
+    
+    // Verifica a conexão
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
     
     // Verifica se já existe um produto com o mesmo código
     $sql_verificar = "SELECT codigo FROM produtos WHERE codigo = '$codigo'";
@@ -48,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Prepara e executa a query SQL para inserir os dados no banco de dados
         $sql = "INSERT INTO produtos (nome_produto, tipo, codigo, data_validade, preco_produto, quantidade_estoque, valor_venda, descricao)
-                VALUES ('$nome_produto', '$tipo', '$codigo', '$data_validade', '$preco_produto', '$quantidade_estoque', '$valor_venda','$descricao')";
+                VALUES ('$nome_produto', '$tipo', '$codigo', '$data_validade', '$preco_produto', '$quantidade_estoque', '$valor_venda', '$descricao')";
 
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Produto cadastrado com sucesso!'); window.location.replace('gerenciamento.php');</script>";
@@ -61,6 +60,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
-
-

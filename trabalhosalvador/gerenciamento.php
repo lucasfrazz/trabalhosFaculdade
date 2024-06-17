@@ -33,11 +33,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     }
     ?>
 
-    <div class="container">
+<div class="container">
         
-    <div class="text-center my-4">
-    <img src="fundo.jpeg" alt="Logo" width="300px">
-</div>
+        <div class="text-center my-4">
+        <img src="logo.jpeg" alt="Logo" width="300px">
+    </div>
     <div class="corner">
    
     
