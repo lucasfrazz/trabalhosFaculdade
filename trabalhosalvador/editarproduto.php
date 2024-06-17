@@ -26,11 +26,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         $produto_id = $_GET['id'];
 
-        $servername = "viaduct.proxy.rlwy.net"; 
-        $username = "root"; 
-        $password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
+        $servername = "monorail.proxy.rlwy.net"; 
+        $username = "root";
+        $password = "tQvieeKcCRvSJCFhJCuhgvbPMaphwwzx"; 
         $dbname = "railway"; 
-        $port = "56902";
+        $port = "25492"; 
         
         // Cria a conexão
         $conn = new mysqli($servername, $username, $password, $dbname, $port);

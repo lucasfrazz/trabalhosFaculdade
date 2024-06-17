@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['produtos']) && !empty($_POST['produtos'])) {
 
         // Conexão com o banco de dados
-        $servername = "viaduct.proxy.rlwy.net"; 
-$username = "root"; 
-$password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
-$dbname = "railway"; 
-$port = "56902"; 
+        $servername = "monorail.proxy.rlwy.net"; 
+        $username = "root";
+        $password = "tQvieeKcCRvSJCFhJCuhgvbPMaphwwzx"; 
+        $dbname = "railway"; 
+        $port = "25492"; 
 
 
 // Cria a conexão

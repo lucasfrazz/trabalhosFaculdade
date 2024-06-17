@@ -24,11 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantidade_estoque = $_POST['quantidade']; // Corrigi o nome do campo aqui
     $descricao = $_POST['descricao'];
 
-    $servername = "viaduct.proxy.rlwy.net"; 
+    $servername = "monorail.proxy.rlwy.net"; 
     $username = "root";
-    $password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
-    $dbname = "railway";
-    $port = "56902"; 
+    $password = "tQvieeKcCRvSJCFhJCuhgvbPMaphwwzx"; 
+    $dbname = "railway"; 
+    $port = "25492"; 
     
     // Cria a conexão
     $conn = new mysqli($servername, $username, $password, $dbname, $port);

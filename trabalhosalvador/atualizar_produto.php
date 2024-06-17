@@ -1,4 +1,3 @@
-
 <?php
 
 // Iniciar a sessão
@@ -11,26 +10,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit();
 }
 
-
 // Verificar se os dados do formulário foram enviados
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conexão com o banco de dados
-    $servername = "viaduct.proxy.rlwy.net"; 
-$username = "root";
-$password = "dhrDjfJEDEVGJBxojvEqjPmDxihrHoEz"; 
-$dbname = "railway"; 
-$port = "56902"; 
+    $servername = "monorail.proxy.rlwy.net";
+    $username = "root";
+    $password = "tQvieeKcCRvSJCFhJCuhgvbPMaphwwzx";
+    $dbname = "railway";
+    $port = "25492";
 
     // Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+    $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "";
-
+    // Verifica a conexão
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
     // Obter os dados do formulário
     $id = $_POST['id'];
@@ -38,8 +34,8 @@ echo "";
     $tipo = $_POST['tipo'];
     $codigo = $_POST['codigo'];
     $data_validade = $_POST['data_validade'];
-    $preco_produto = $_POST['preco_produto']; 
-    $valor_venda = $_POST['valor_venda']; 
+    $preco_produto = str_replace(',', '.', $_POST['preco_produto']); // Converte vírgula para ponto
+    $valor_venda = str_replace(',', '.', $_POST['valor_venda']); // Converte vírgula para ponto
     $quantidade_estoque = $_POST['quantidade_estoque'];
     $descricao = $_POST['descricao'];
 
@@ -68,7 +64,3 @@ echo "";
     $conn->close();
 }
 ?>
-
-
-
-
